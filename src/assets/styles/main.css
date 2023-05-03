@@ -1,0 +1,12 @@
+@import "./base.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a,
+.green {
+	text-decoration: none;
+	color: var(--color-theme-white-hex);
+	transition: 0.4s;
+}
