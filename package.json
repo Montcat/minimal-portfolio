@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.1.2",
+    "animate.css": "^4.1.1",
     "sass": "^1.62.1",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"

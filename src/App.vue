@@ -11,7 +11,15 @@
 			<!-- View Section -->
 			<main>
 				<section class="view-container">
-					<RouterView />
+					<RouterView v-slot="{ Component }">
+						<Transition
+							enter-active-class="animate__animated animate__fadeIn"
+							leave-active-class="animate__animated animate__fadeOut"
+							mode="out-in"
+						>
+							<component :is="Component" />
+						</Transition>
+					</RouterView>
 				</section>
 			</main>
 
@@ -27,6 +35,7 @@
 	import { RouterView } from "vue-router";
 	import TheNav from "./components/TheNav.vue";
 	import TheFooter from "./components/TheFooter.vue";
+	import "animate.css";
 </script>
 
 <style lang="scss" scoped>
@@ -62,5 +71,16 @@
 		position: absolute;
 		bottom: 0;
 		left: 0;
+	}
+
+	// Transition styles
+	.fade-enter-from,
+	.fade-leave-to {
+		opacity: 0;
+	}
+
+	.fade-enter-active,
+	.fade-leave-active {
+		transition: opacity 0.5s ease-out;
 	}
 </style>

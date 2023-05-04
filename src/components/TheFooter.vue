@@ -1,15 +1,23 @@
 <template>
 	<div class="footer">
-		<a href="#" class="link-item">
+		<a
+			href="https://www.linkedin.com/in/sosthene-lamptey-55b7b8191/"
+			target="_blank"
+			class="link-item"
+		>
 			<IconLinkedIn />
 		</a>
-		<a href="#" class="link-item">
+		<a
+			href="https://web.facebook.com/montcat.sosthene"
+			target="_blank"
+			class="link-item"
+		>
 			<IconFacebook />
 		</a>
-		<a href="#" class="link-item">
+		<a href="https://github.com/Montcat" target="_blank" class="link-item">
 			<IconGithub />
 		</a>
-		<a href="#" class="link-item">
+		<a href="mailto: montcat99@gmail.com" target="_blank" class="link-item">
 			<IconEmail />
 		</a>
 	</div>
