@@ -5,7 +5,7 @@
 				<h2 class="header">{{ project.name }}</h2>
 				<p class="description">{{ project.description }}</p>
 				<span class="live-preview">
-					<a :href="project.livePreviewUrl">{{ project.livePreviewUrl }}</a>
+					<a :href="project.livePreviewUrl" target="_bl">{{ project.livePreviewUrl }}</a>
 				</span>
 			</div>
 		</a>
