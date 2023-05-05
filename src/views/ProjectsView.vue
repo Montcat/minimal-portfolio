@@ -15,7 +15,7 @@
 				</div>
 			</div>
 		</div>
-		<span class="scroll-notifyer">Scroll form more</span>
+		<span class="scroll-notifyer">Scroll for more</span>
 	</div>
 </template>
 
