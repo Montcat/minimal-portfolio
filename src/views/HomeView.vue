@@ -43,11 +43,13 @@
 				display: flex;
 				justify-content: center;
 				padding: 1rem 0;
+				text-align: center;
 			}
 
 			.profession {
 				font-size: 1.2rem;
 				margin: 1rem auto;
+				text-align: center;
 			}
 		}
 	}

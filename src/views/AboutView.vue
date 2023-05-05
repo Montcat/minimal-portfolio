@@ -32,7 +32,8 @@
 		justify-content: center;
 		.header {
 			font-weight: 700;
-			font-size: 2vw;
+			font-size: 2rem;
+			text-align: center;
 			margin: auto;
 		}
 
