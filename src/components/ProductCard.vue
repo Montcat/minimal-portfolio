@@ -1,16 +1,19 @@
 <template>
 	<div class="product-card">
-		<a :href="project.html_url" target="_bl">
+		<a :href="project.htmlUrl" target="_bl">
 			<div class="card-layout">
-				<h2 class="header">{{ ++index }} {{ project.name }}</h2>
+				<h2 class="header">{{ project.name }}</h2>
 				<p class="description">{{ project.description }}</p>
+				<span class="live-preview">
+					<a :href="project.livePreviewUrl" target="_bl">{{ project.livePreviewUrl }}</a>
+				</span>
 			</div>
 		</a>
 	</div>
 </template>
 
 <script setup>
-	defineProps(["project", "index"]);
+	defineProps(["project"]);
 </script>
 
 <style lang="scss" scoped>
@@ -27,6 +30,10 @@
 		.header {
 			font-size: 1.5rem;
 			font-weight: 600;
+		}
+
+		.live-preview > a {
+			color: var(--color-theme-black-hex);
 		}
 	}
 </style>

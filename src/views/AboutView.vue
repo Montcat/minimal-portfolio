@@ -28,16 +28,18 @@
 	.about-content {
 		display: flex;
 		flex-direction: column;
-		place-items: center;
-
+		align-items: center;
+		justify-content: center;
 		.header {
-			font-size: 2rem;
 			font-weight: 700;
+			font-size: 2rem;
+			text-align: center;
+			margin: auto;
 		}
 
 		p {
 			text-align: center;
-			padding: 1rem 4rem;
+			padding: 1rem 2vw;
 		}
 
 		.tags {

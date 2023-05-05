@@ -10,12 +10,12 @@
 				<TheLoader />
 			</div>
 			<div v-else>
-				<div v-if="error">{{ error }}</div>
-				<div v-for="(project, index) in projects" :key="project.id">
-					<ProductCard :project="project" :index="index" />
+				<div v-for="project in projects" :key="project.id">
+					<ProductCard :project="project" />
 				</div>
 			</div>
 		</div>
+		<span class="scroll-notifyer">Scroll for more</span>
 	</div>
 </template>
 
@@ -23,25 +23,47 @@
 	import IconGithub from "../components/icons/IconGithub.vue";
 	import ProductCard from "@/components/ProductCard.vue";
 	import TheLoader from "@/components/TheLoader.vue";
-	import { ref, onMounted } from "vue";
-	const projects = ref([]);
+	import { ref } from "vue";
+
+	// The loading ref has no effect at the moment because i indended on fetching the repos from github but since github can't deploy ssg pages
 	const loading = ref(false);
-	const error = ref(null);
-	onMounted(async () => {
-		try {
-			loading.value = true;
-			const res = await fetch("https://api.github.com/users/montcat/repos");
-			projects.value = await res.json();
-			loading.value = false;
-		} catch (ex) {
-			error.value = ex;
-			loading.value = false;
-		}
-	});
+	const projects = ref([
+		{
+			name: "Result Summary Component - VueJs",
+			htmlUrl: "https://github.com/Montcat/vue-result-summary-component",
+			description:
+				"This project is a solution to one of the challenges from frontend mentor",
+			livePreviewUrl: "https://montcat.github.io/vue-result-summary-component/",
+		},
+		{
+			name: "Intro Dropdown Navigation - VueJs",
+			htmlUrl: "https://github.com/Montcat/intro-dropdown-navigation",
+			description:
+				"This project is a solution to one of the challenges from frontend mentor",
+			livePreviewUrl: "https://montcat.github.io/intro-dropdown-navigation/",
+		},
+		{
+			name: "News Homepage - VueJs",
+			htmlUrl: "https://github.com/Montcat/news-homepage",
+			description:
+				"This project was a solution to one of the challenges from frontend mentor",
+			livePreviewUrl: "https://montcat.github.io/news-homepage/",
+		},
+		{
+			name: "Expenses Chart Component - VueJs",
+			htmlUrl: "https://github.com/Montcat/expenses-chart",
+			description:
+				"This project was a solution to one of the challenges from frontend mentor",
+			livePreviewUrl: "https://montcat.github.io/expenses-chart/",
+		},
+	]);
 </script>
 
 <style lang="scss" scoped>
 	.projects {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		.header {
 			display: flex;
 			height: 2rem;
@@ -50,13 +72,17 @@
 			gap: 0.5rem;
 		}
 
+		.header-text {
+			font-weight: 600;
+		}
+
 		.icon {
 			width: 2rem;
 			fill: var(--khaki-200);
 		}
 
 		.projects-content {
-			max-height: 80vh;
+			max-height: 90vh;
 			overflow: scroll;
 			border-radius: 1rem;
 			padding: 0 1rem;
@@ -74,6 +100,10 @@
 		/* Hide scrollbar for Chrome, Safari and Opera */
 		.projects-content::-webkit-scrollbar {
 			display: none;
+		}
+
+		.scroll-notifyer {
+			font-weight: 600;
 		}
 	}
 </style>

@@ -11,7 +11,11 @@
 			<!-- View Section -->
 			<main>
 				<section class="view-container">
-					<RouterView />
+					<RouterView v-slot="{ Component }">
+						<Transition name="fade" mode="out-in">
+							<component :is="Component" />
+						</Transition>
+					</RouterView>
 				</section>
 			</main>
 
@@ -62,5 +66,16 @@
 		position: absolute;
 		bottom: 0;
 		left: 0;
+	}
+
+	// Transition styles
+	.fade-enter-from,
+	.fade-leave-to {
+		opacity: 0;
+	}
+
+	.fade-enter-active,
+	.fade-leave-active {
+		transition: opacity 0.5s ease-in-out;
 	}
 </style>
